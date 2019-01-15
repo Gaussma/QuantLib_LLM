@@ -315,7 +315,13 @@ libormarketmodel.cpp :{&
         #include <ql/stochasticprocess.hpp> meet 
      }
 
-#include <ql/pricingengines/swap/discountingswapengine.hpp>
+#include <ql/pricingengines/swap/discountingswapengine.hpp> solved. M.M. 
+
+    {
+    	#include <ql/instruments/swap.hpp> meet
+        #include <ql/termstructures/yieldtermstructure.hpp> meet 
+        #include <ql/handle.hpp> meet 
+    }
 #include <ql/pricingengines/capfloor/blackcapfloorengine.hpp>
 #include <ql/pricingengines/capfloor/analyticcapfloorengine.hpp>
 
