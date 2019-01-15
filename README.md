@@ -37,7 +37,7 @@ utilities.hpp contains
    #include <ql/option.hpp>solved. 
       #include <ql/instrument.hpp>solved
          (#include <ql/patterns/lazyobject.hpp>
-         	[#include <ql/patterns/observable.hpp>]
+         	[#include <ql/patterns/observable.hpp>] solved 
          	 {#include <ql/errors.hpp>
          	 	  (#include <ql/qldefines.hpp>-none 
                    #include <ql/shared_ptr.hpp>
@@ -91,7 +91,7 @@ utilities.hpp contains
                 {#include <ql/patterns/observable.hpp> meet})
             #include <ql/handle.hpp> solved
                 (<ql/patterns/observable.hpp>-meet)
-            #include <ql/math/interpolations/extrapolation.hpp>
+            #include <ql/math/interpolations/extrapolation.hpp> meet 
              (<ql/qldefines.hpp> meet)
              #include <ql/utilities/null.hpp> meet]
         #include <ql/interestrate.hpp> solved
@@ -105,7 +105,7 @@ utilities.hpp contains
             #include <ql/errors.hpp> meet 
             #include <ql/utilities/null.hpp> meet]}
     #include <ql/termstructures/volatility/equityfx/blackvoltermstructure.hpp> solved
-     {#include <ql/termstructures/voltermstructure.hpp>
+     {#include <ql/termstructures/voltermstructure.hpp> solved. 
      	[#include <ql/termstructure.hpp> meet ]
       #include <ql/patterns/visitor.hpp>solved. 
        [#include <ql/qldefines.hpp> meet]}
@@ -223,11 +223,47 @@ libormarketmodel.cpp :{&
     }
 
 
-#include <ql/termstructures/volatility/optionlet/capletvariancecurve.hpp>
+#include <ql/termstructures/volatility/optionlet/capletvariancecurve.hpp> solved. M.M. 
        {
-       	#include <ql/termstructures/volatility/optionlet/ optionletvolatilitystructure.hpp>
-         #include <ql/termstructures/volatility/equityfx/blackvariancecurve.hpp>
-        #include <ql/termstructures/volatility/flatsmilesection.hpp>
+       	#include <ql/termstructures/volatility/optionlet/optionletvolatilitystructure.hpp> solved
+       	     [#include <ql/termstructures/voltermstructure.hpp> solved.
+             #include <ql/termstructures/volatility/optionlet/optionletstripper.hpp>
+                    (#include <ql/termstructures/volatility/optionlet/strippedoptionletbase.hpp>solved. 
+                    	    {
+                    	    	#include <ql/patterns/lazyobject.hpp> meet. 
+                                #include <ql/time/businessdayconvention.hpp> solved. 
+                                #include <ql/types.hpp> solved. 
+                                #include <ql/termstructures/volatility/volatilitytype.hpp> solved. 
+                    	    }
+                     #include <ql/termstructures/volatility/capfloor/capfloortermvolsurface.hpp> solved. 
+                             {
+                             	#include <ql/termstructures/volatility/capfloor/capfloortermvolatilitystructure.hpp> solved. 
+                             	        [#include <ql/termstructures/voltermstructure.hpp>] solved. 
+                                  #include <ql/math/interpolations/interpolation2d.hpp> solved. M. 
+                                        
+                                  #include <ql/quote.hpp> meet 
+                                 #include <ql/patterns/lazyobject.hpp> meet. 
+                                 #include <ql/time/daycounters/actual365fixed.hpp> meet 
+                             }
+                     #include <ql/termstructures/volatility/volatilitytype.hpp> meet
+                     #include <ql/termstructures/yieldtermstructure.hpp> meet 
+                     )
+              #include <ql/termstructures/volatility/volatilitytype.hpp> meet 
+       	     ]
+         #include <ql/termstructures/volatility/equityfx/blackvariancecurve.hpp> solved. 
+               [#include <ql/termstructures/volatility/equityfx/blackvoltermstructure.hpp> meet 
+                #include <ql/math/interpolation.hpp> meet 
+                ]
+        #include <ql/termstructures/volatility/flatsmilesection.hpp> solved. 
+              [#include <ql/termstructures/volatility/smilesection.hpp>solved. 
+                     (
+                     	#include <ql/patterns/observable.hpp> meet 
+                        #include <ql/time/daycounter.hpp> meet 
+                        #include <ql/utilities/null.hpp> meet 
+                         #include <ql/option.hpp> meet 
+                         #include <ql/termstructures/volatility/volatilitytype.hpp> meet 
+                     )
+              ]
 
        }
 #include <ql/math/optimization/levenbergmarquardt.hpp>
@@ -243,9 +279,9 @@ libormarketmodel.cpp :{&
 #include <ql/models/shortrate/calibrationhelpers/caphelper.hpp>
 #include <ql/models/shortrate/calibrationhelpers/swaptionhelper.hpp>
 
-#include <ql/legacy/libormarketmodels/lfmcovarproxy.hpp>
+#include <ql/legacy/libormarketmodels/lfmcovarproxy.hpp> solved. M. 
     {
-     #include <ql/legacy/libormarketmodels/lfmcovarparam.hpp> 
+     #include <ql/legacy/libormarketmodels/lfmcovarparam.hpp> solved. M. 
           [#include <ql/math/matrix.hpp> solved. M. 
               (#include <ql/math/array.hpp> solved M 
 
@@ -259,14 +295,51 @@ libormarketmodel.cpp :{&
                  #include <ql/utilities/steppingiterator.hpp> solved M. 
               )
           ]
-     #include <ql/legacy/libormarketmodels/lmvolmodel.hpp>
-      #include <ql/legacy/libormarketmodels/lmcorrmodel.hpp>
+     #include <ql/legacy/libormarketmodels/lmvolmodel.hpp> solved. 
+            [#include <ql/models/parameter.hpp> solved. 
+                 ( #include <ql/math/optimization/constraint.hpp> solved. 
+
+                 	{#include <ql/math/array.hpp> solved. M. }
+                 	)
+            ]
+      #include <ql/legacy/libormarketmodels/lmcorrmodel.hpp> solved. {
+      	  #include <ql/math/array.hpp> solved. 
+          #include <ql/math/matrix.hpp> solved. 
+          #include <ql/models/parameter.hpp> solved. 
+      }
     }
-#include <ql/legacy/libormarketmodels/lmexpcorrmodel.hpp>
-#include <ql/legacy/libormarketmodels/lmlinexpcorrmodel.hpp>
-#include <ql/legacy/libormarketmodels/lmfixedvolmodel.hpp>
-#include <ql/legacy/libormarketmodels/lmextlinexpvolmodel.hpp>
+
+
+#include <ql/legacy/libormarketmodels/lmexpcorrmodel.hpp> solved. {
+	    #include <ql/legacy/libormarketmodels/lmcorrmodel.hpp> solved. 
+    }
+#include <ql/legacy/libormarketmodels/lmlinexpcorrmodel.hpp> solved. M. {
+	#include <ql/legacy/libormarketmodels/lmcorrmodel.hpp> solved. 
+}
+#include <ql/legacy/libormarketmodels/lmfixedvolmodel.hpp> solved. M. {
+	  #include <ql/legacy/libormarketmodels/lmvolmodel.hpp> solved. 
+}
+#include <ql/legacy/libormarketmodels/lmextlinexpvolmodel.hpp>{
+	 #include <ql/legacy/libormarketmodels/lmlinexpvolmodel.hpp> solved. 
+	   [#include <ql/legacy/libormarketmodels/lmcorrmodel.hpp> solved. ]
+}
 #include <ql/legacy/libormarketmodels/liborforwardmodel.hpp>
+     {
+      #include <ql/legacy/libormarketmodels/lfmprocess.hpp> solved. M. 
+              [#include <ql/cashflow.hpp> solved. 
+              #include <ql/indexes/iborindex.hpp> solved. 
+                #include <ql/termstructures/volatility/optionlet/optionletvolatilitystructure.hpp> meet
+                #include <ql/stochasticprocess.hpp>
+                    (#include <ql/time/date.hpp> meet 
+                     #include <ql/patterns/observable.hpp> meet 
+                     #include <ql/math/matrix.hpp> meet  
+                    	)
+               #include <ql/legacy/libormarketmodels/lfmcovarparam.hpp>] meet 
+      #include <ql/termstructures/volatility/swaption/swaptionvolmatrix.hpp>
+      #include <ql/termstructures/volatility/optionlet/capletvariancecurve.hpp>
+      #include <ql/models/model.hpp>
+      #include <ql/legacy/libormarketmodels/lfmcovarproxy.hpp>
+     }
 #include <ql/legacy/libormarketmodels/lfmswaptionengine.hpp>
 #include <ql/legacy/libormarketmodels/lfmhullwhiteparam.hpp>
 
