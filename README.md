@@ -267,8 +267,19 @@ libormarketmodel.cpp :{&
 
        }
 
-       
-#include <ql/math/optimization/levenbergmarquardt.hpp>
+
+#include <ql/math/optimization/levenbergmarquardt.hpp> solved. 
+    {#include <ql/math/optimization/problem.hpp> solved. 
+          [#include <ql/math/optimization/method.hpp>solved.
+               (#include <ql/math/optimization/endcriteria.hpp> meet)
+           #include <ql/math/optimization/constraint.hpp> meet
+           #include <ql/math/optimization/costfunction.hpp> solved. M. 
+                (#include <ql/math/array.hpp> meet
+                #include <ql/math/matrix.hpp> meet
+                 #include <ql/math/functional.hpp> meet )
+          ]
+
+    }
 
 #include <ql/math/statistics/generalstatistics.hpp>
 #include <ql/math/randomnumbers/rngtraits.hpp>
