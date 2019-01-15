@@ -71,7 +71,7 @@ utilities.hpp contains
       #include <ql/errors.hpp>
           (#include <ql/qldefines.hpp> - meet
            #include <ql/shared_ptr.hpp>)-meet 
-#include <ql/exercise.hpp>
+#include <ql/exercise.hpp> solved.
       {#include <ql/time/date.hpp> -meet}
 #include <ql/termstructures/yieldtermstructure.hpp> solved. 
       { #include <ql/termstructure.hpp>-solved
@@ -323,7 +323,7 @@ libormarketmodel.cpp :{&
 	 #include <ql/legacy/libormarketmodels/lmlinexpvolmodel.hpp> solved. 
 	   [#include <ql/legacy/libormarketmodels/lmcorrmodel.hpp> solved. ]
 }
-#include <ql/legacy/libormarketmodels/liborforwardmodel.hpp>
+#include <ql/legacy/libormarketmodels/liborforwardmodel.hpp> solved. M.M. 
      {
       #include <ql/legacy/libormarketmodels/lfmprocess.hpp> solved. M. 
               [#include <ql/cashflow.hpp> solved. 
@@ -352,14 +352,35 @@ libormarketmodel.cpp :{&
       #include <ql/termstructures/volatility/optionlet/capletvariancecurve.hpp> meet 
       #include <ql/models/model.hpp>
              [#include <ql/option.hpp> meet 
-             #include <ql/methods/lattices/lattice.hpp>
-                   (#include <ql/numericalmethod.hpp>
-                    #include <ql/discretizedasset.hpp>
-                     #include <ql/patterns/curiouslyrecurring.hpp>
+             #include <ql/methods/lattices/lattice.hpp> solved. M. 
+                   (#include <ql/numericalmethod.hpp> solved. M. 
+                   	      {
+                   	      	#include <ql/timegrid.hpp> solved. 
+                   	      	     [#include <ql/errors.hpp> meet 
+                                  #include <ql/math/comparison.hpp> meet 
+                   	      	     ]
+                            #include <ql/math/array.hpp> meet 
+                   	      }
+                    #include <ql/discretizedasset.hpp>  solved. 
+
+                            {
+                            	#include <ql/numericalmethod.hpp> meet 
+                                #include <ql/math/comparison.hpp> meet 
+                                #include <ql/math/functional.hpp> meet 
+                                #include <ql/exercise.hpp> meet 
+
+                            }
+
+                     #include <ql/patterns/curiouslyrecurring.hpp> solved. 
                    	)
              #include <ql/models/parameter.hpp> meet 
-             #include <ql/models/calibrationhelper.hpp>
-              #include <ql/math/optimization/endcriteria.hpp> ]
+             #include <ql/models/calibrationhelper.hpp> solved. 
+                   (#include <ql/quote.hpp> meet 
+                   #include <ql/termstructures/yieldtermstructure.hpp> meet 
+                    #include <ql/termstructures/volatility/volatilitytype.hpp> meet 
+                    #include <ql/patterns/lazyobject.hpp> meet 
+                   	 )
+              #include <ql/math/optimization/endcriteria.hpp> solved. ]
       #include <ql/legacy/libormarketmodels/lfmcovarproxy.hpp> meet 
      }
 #include <ql/legacy/libormarketmodels/lfmswaptionengine.hpp>
