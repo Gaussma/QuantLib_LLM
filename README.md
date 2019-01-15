@@ -322,8 +322,20 @@ libormarketmodel.cpp :{&
         #include <ql/termstructures/yieldtermstructure.hpp> meet 
         #include <ql/handle.hpp> meet 
     }
-#include <ql/pricingengines/capfloor/blackcapfloorengine.hpp>
-#include <ql/pricingengines/capfloor/analyticcapfloorengine.hpp>
+#include <ql/pricingengines/capfloor/blackcapfloorengine.hpp> solved. M.M. 
+    {
+    	#include <ql/instruments/capfloor.hpp> meet
+        #include <ql/termstructures/volatility/optionlet/optionletvolatilitystructure.hpp> meet
+    }
+#include <ql/pricingengines/capfloor/analyticcapfloorengine.hpp> solved.M.M. 
+    {
+    	#include <ql/instruments/capfloor.hpp> meet 
+        #include <ql/pricingengines/genericmodelengine.hpp> solved.M. 
+            [ #include <ql/pricingengine.hpp> meet
+             #include <ql/handle.hpp> meet 
+            ]
+        #include <ql/models/model.hpp> meet 
+    }
 
 #include <ql/models/shortrate/calibrationhelpers/caphelper.hpp>
 #include <ql/models/shortrate/calibrationhelpers/swaptionhelper.hpp>
@@ -404,7 +416,7 @@ libormarketmodel.cpp :{&
                #include <ql/math/matrix.hpp> meet 
               ]
       #include <ql/termstructures/volatility/optionlet/capletvariancecurve.hpp> meet 
-      #include <ql/models/model.hpp>
+      #include <ql/models/model.hpp> solved.M. 
              [#include <ql/option.hpp> meet 
              #include <ql/methods/lattices/lattice.hpp> solved. M. 
                    (#include <ql/numericalmethod.hpp> solved. M. 
