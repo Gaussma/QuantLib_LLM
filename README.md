@@ -49,7 +49,7 @@ utilities.hpp contains
                   (#include <ql/qldefines.hpp>-meet)
 
                #include <ql/shared_ptr.hpp> -meet}
-          #include <ql/pricingengine.hpp>
+          #include <ql/pricingengine.hpp> solved. 
             [#include <ql/patterns/observable.hpp>]-meet
           #include <ql/utilities/null.hpp>
             [#include <ql/types.hpp>]-meet 
@@ -279,6 +279,11 @@ libormarketmodel.cpp :{&
 #include <ql/models/shortrate/calibrationhelpers/caphelper.hpp>
 #include <ql/models/shortrate/calibrationhelpers/swaptionhelper.hpp>
 
+
+
+
+
+
 #include <ql/legacy/libormarketmodels/lfmcovarproxy.hpp> solved. M. 
     {
      #include <ql/legacy/libormarketmodels/lfmcovarparam.hpp> solved. M. 
@@ -383,8 +388,32 @@ libormarketmodel.cpp :{&
               #include <ql/math/optimization/endcriteria.hpp> solved. ]
       #include <ql/legacy/libormarketmodels/lfmcovarproxy.hpp> meet 
      }
-#include <ql/legacy/libormarketmodels/lfmswaptionengine.hpp>
-#include <ql/legacy/libormarketmodels/lfmhullwhiteparam.hpp>
+#include <ql/legacy/libormarketmodels/lfmswaptionengine.hpp> solved. M.M. 
+      {
+      	#include <ql/instruments/swaption.hpp> solved. M. 
+
+      	    {
+      	    	 #include <ql/option.hpp> meet 
+                #include <ql/instruments/vanillaswap.hpp> solved.  [
+                    #include <ql/instruments/swap.hpp> solved. 
+                   #include <ql/time/daycounter.hpp> meet 
+                      #include <ql/time/schedule.hpp> meet 
+                   ]
+                #include <ql/termstructures/yieldtermstructure.hpp> meet 
+                  #include <ql/termstructures/volatility/volatilitytype.hpp> meet 
+      	    }
+        #include <ql/pricingengines/genericmodelengine.hpp> solved. 
+            {
+            	#include <ql/pricingengine.hpp> meet 
+               #include <ql/handle.hpp> meet 
+            }
+        #include <ql/legacy/libormarketmodels/liborforwardmodel.hpp> meet 
+      }
+#include <ql/legacy/libormarketmodels/lfmhullwhiteparam.hpp> solved. M.M. 
+     {
+     	#include <ql/legacy/libormarketmodels/lfmprocess.hpp> meet 
+        #include <ql/legacy/libormarketmodels/lfmcovarparam.hpp> meet 
+     }
 
 
 
