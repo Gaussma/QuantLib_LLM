@@ -337,8 +337,19 @@ libormarketmodel.cpp :{&
         #include <ql/models/model.hpp> meet 
     }
 
-#include <ql/models/shortrate/calibrationhelpers/caphelper.hpp>
-#include <ql/models/shortrate/calibrationhelpers/swaptionhelper.hpp>
+#include <ql/models/shortrate/calibrationhelpers/caphelper.hpp> solved.M.M. 
+
+    {
+    	#include <ql/models/calibrationhelper.hpp> meet 
+        #include <ql/instruments/capfloor.hpp> meet 
+    }
+#include <ql/models/shortrate/calibrationhelpers/swaptionhelper.hpp> solved.M.M. 
+   {
+
+   	#include <ql/models/calibrationhelper.hpp> meet
+   #include <ql/instruments/swaption.hpp>  meet 
+   #include <ql/termstructures/volatility/volatilitytype.hpp> meet 
+   }
 
 
 
