@@ -335,10 +335,32 @@ libormarketmodel.cpp :{&
                      #include <ql/math/matrix.hpp> meet  
                     	)
                #include <ql/legacy/libormarketmodels/lfmcovarparam.hpp>] meet 
-      #include <ql/termstructures/volatility/swaption/swaptionvolmatrix.hpp>
-      #include <ql/termstructures/volatility/optionlet/capletvariancecurve.hpp>
+      #include <ql/termstructures/volatility/swaption/swaptionvolmatrix.hpp> solved M. 
+              [#include <ql/termstructures/volatility/swaption/swaptionvoldiscrete.hpp> solved.M. 
+                    (
+                    	 #include <ql/termstructures/volatility/swaption/swaptionvolstructure.hpp>
+                    	       {
+                    	       	#include <ql/termstructures/voltermstructure.hpp> meet 
+                                 #include <ql/termstructures/volatility/volatilitytype.hpp> meet 
+                    	       }
+                        #include <ql/math/interpolation.hpp> meet 
+                        #include <ql/patterns/lazyobject.hpp> meet 
+                    	)
+              #include <ql/math/interpolations/interpolation2d.hpp> meet 
+               #include <ql/math/matrix.hpp> meet 
+              ]
+      #include <ql/termstructures/volatility/optionlet/capletvariancecurve.hpp> meet 
       #include <ql/models/model.hpp>
-      #include <ql/legacy/libormarketmodels/lfmcovarproxy.hpp>
+             [#include <ql/option.hpp> meet 
+             #include <ql/methods/lattices/lattice.hpp>
+                   (#include <ql/numericalmethod.hpp>
+                    #include <ql/discretizedasset.hpp>
+                     #include <ql/patterns/curiouslyrecurring.hpp>
+                   	)
+             #include <ql/models/parameter.hpp> meet 
+             #include <ql/models/calibrationhelper.hpp>
+              #include <ql/math/optimization/endcriteria.hpp> ]
+      #include <ql/legacy/libormarketmodels/lfmcovarproxy.hpp> meet 
      }
 #include <ql/legacy/libormarketmodels/lfmswaptionengine.hpp>
 #include <ql/legacy/libormarketmodels/lfmhullwhiteparam.hpp>
