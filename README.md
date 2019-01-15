@@ -281,9 +281,39 @@ libormarketmodel.cpp :{&
 
     }
 
-#include <ql/math/statistics/generalstatistics.hpp>
-#include <ql/math/randomnumbers/rngtraits.hpp>
-#include <ql/methods/montecarlo/multipathgenerator.hpp>
+#include <ql/math/statistics/generalstatistics.hpp> solved. M.M. 
+#include <ql/math/randomnumbers/rngtraits.hpp> solved. M.M. 
+
+    {
+        #include <ql/methods/montecarlo/pathgenerator.hpp> solved.M. 
+               [ #include <ql/methods/montecarlo/brownianbridge.hpp> solved. 
+                      (#include <ql/methods/montecarlo/path.hpp> solved. M. 
+                        #include <ql/methods/montecarlo/sample.hpp> solved. M. 
+                       )
+                 #include <ql/stochasticprocess.hpp> meet 
+                ]
+        #include <ql/math/randomnumbers/mt19937uniformrng.hpp> solved. 
+           [#include <ql/methods/montecarlo/sample.hpp> meet]
+         #include <ql/math/randomnumbers/inversecumulativerng.hpp> solved. 
+            [#include <ql/methods/montecarlo/sample.hpp> meet]
+        #include <ql/math/randomnumbers/randomsequencegenerator.hpp> solved.
+        #include <ql/math/randomnumbers/sobolrsg.hpp> solved. 
+        #include <ql/math/randomnumbers/inversecumulativersg.hpp>  solved. M. 
+        #include <ql/math/distributions/normaldistribution.hpp> solved.M. 
+            [#include <ql/math/errorfunction.hpp> meet
+             #include <ql/errors.hpp> meet]
+        #include <ql/math/distributions/poissondistribution.hpp> Solved. M 
+             [ #include <ql/math/factorial.hpp> solved. 
+               #include <ql/math/incompletegamma.hpp> solved. M. 
+            ]
+    }
+#include <ql/methods/montecarlo/multipathgenerator.hpp> solved.M. 
+     {
+     	#include <ql/methods/montecarlo/multipath.hpp> solved
+     	     [#include <ql/methods/montecarlo/path.hpp> meet]
+        #include <ql/methods/montecarlo/sample.hpp> meet 
+        #include <ql/stochasticprocess.hpp> meet 
+     }
 
 #include <ql/pricingengines/swap/discountingswapengine.hpp>
 #include <ql/pricingengines/capfloor/blackcapfloorengine.hpp>
@@ -347,7 +377,7 @@ libormarketmodel.cpp :{&
               [#include <ql/cashflow.hpp> solved. 
               #include <ql/indexes/iborindex.hpp> solved. 
                 #include <ql/termstructures/volatility/optionlet/optionletvolatilitystructure.hpp> meet
-                #include <ql/stochasticprocess.hpp>
+                #include <ql/stochasticprocess.hpp> solved.M. 
                     (#include <ql/time/date.hpp> meet 
                      #include <ql/patterns/observable.hpp> meet 
                      #include <ql/math/matrix.hpp> meet  
