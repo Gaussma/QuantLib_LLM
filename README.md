@@ -779,3 +779,165 @@ ql/index.hpp
 ql/numericalmethod.hpp
 ql/stochasticprocess.hpp
 ql/timegrid.hpp
+
+
+
+
+*********************************
+
+
+
+
+Now we need to consider pair cpp files !  
+
+#include <ql/indexes/ibor/euribor.cpp>  solved.M.M.Complete
+    {
+    	add: ql/time/calendars/target.hpp cpp[meet,meet]
+    	add: ql/currencies/europe.hpp cpp [meet,meet]
+
+    }
+
+
+#include <ql/instruments/capfloor.cpp>
+
+     {
+      #include <ql/instruments/capfloor.hpp> 
+           [
+            #include <ql/instrument.hpp> cpp solved. 
+                (
+                	 #include <ql/patterns/lazyobject.hpp> stop
+                     #include <ql/pricingengine.hpp>  stop 
+                     #include <ql/utilities/null.hpp> stop 
+                     #include <ql/time/date.hpp>  stop 
+                	)
+
+           #include <ql/cashflows/iborcoupon.hpp> cpp solved. 
+                (  
+                add #include <ql/cashflows/couponpricer.hpp>
+                add #include <ql/cashflows/capflooredcoupon.hpp>
+                add  #include <ql/cashflows/cashflowvectors.hpp>
+                   #include <ql/indexes/interestrateindex.hpp> stop 
+               #include <ql/termstructures/yieldtermstructure.hpp> stop 
+
+
+
+                	)
+           #include <ql/handle.hpp> cpp  stop 
+            #include <ql/termstructures/volatility/volatilitytype.hpp> stop 
+           ]
+      #include <ql/pricingengines/capfloor/blackcapfloorengine.hpp>
+      #include <ql/pricingengines/capfloor/blackcapfloorengine.cpp>
+           [add: #include <ql/pricingengines/capfloor/blackcapfloorengine.hpp>
+            add: #include <ql/pricingengines/blackformula.hpp>
+                  (cpp and hpp file. 
+                  	#include <ql/option.hpp>
+                   #include <ql/instruments/payoffs.hpp>
+                   #include <ql/pricingengines/blackformula.hpp>
+                  #include <ql/math/functional.hpp>
+                  add:#include <ql/math/solvers1d/newtonsafe.hpp>
+                   #include <ql/math/distributions/normaldistribution.hpp>
+
+
+
+                   )
+            #include <ql/termstructures/yieldtermstructure.hpp> stop 
+          add: #include <ql/termstructures/volatility/optionlet/constantoptionletvol.hpp>
+          add:  #include <ql/time/calendars/nullcalendar.hpp>
+
+           ]
+
+
+      add: #include <ql/pricingengines/capfloor/bacheliercapfloorengine.hpp>
+
+           [two: 
+           #include <ql/instruments/capfloor.hpp>
+            #include <ql/termstructures/volatility/optionlet/optionletvolatilitystructure.hpp>
+           #include <ql/pricingengines/capfloor/bacheliercapfloorengine.hpp>
+           #include <ql/pricingengines/blackformula.hpp> meet
+         #include <ql/termstructures/yieldtermstructure.hpp> meet
+       add:  #include <ql/termstructures/volatility/optionlet/constantoptionletvol.hpp>
+        add: #include <ql/termstructures/volatility/optionlet/strippedoptionletadapter.hpp>
+
+               (
+                #include <ql/termstructures/volatility/optionlet/strippedoptionletbase.hpp>
+               #include <ql/termstructures/volatility/optionlet/optionletstripper.hpp>
+               #include <ql/termstructures/volatility/optionlet/optionletvolatilitystructure.hpp>
+               #include <ql/math/interpolation.hpp>
+            add:   #include <ql/math/interpolations/sabrinterpolation.hpp>
+                        {
+                        add:	#include <ql/math/interpolations/xabrinterpolation.hpp>
+                           #include <ql/termstructures/volatility/sabr.hpp>
+                        }
+
+
+               	)
+         #include <ql/time/calendars/nullcalendar.hpp> meet. 
+
+
+           ]
+      #include <ql/math/solvers1d/newtonsafe.hpp> meet
+      #include <ql/quotes/simplequote.hpp> mmet 
+     add: #include <ql/cashflows/cashflows.hpp>(
+     	    two: 
+     	      #include <ql/cashflows/duration.hpp>
+
+     	       #include <ql/cashflows/cashflows.hpp>
+              #include <ql/cashflows/coupon.hpp>
+          add:   #include <ql/termstructures/yield/flatforward.hpp>
+          add:   #include <ql/math/solvers1d/brent.hpp>
+           #include <ql/math/solvers1d/newtonsafe.hpp> meet
+            #include <ql/cashflows/couponpricer.hpp> meet
+           #include <ql/patterns/visitor.hpp> meet
+            #include <ql/quotes/simplequote.hpp>
+         add:    #include <ql/termstructures/yield/zerospreadedtermstructure.hpp>
+
+     	    )
+      #include <ql/utilities/dataformatters.hpp> meet
+      #include <ql/termstructures/yieldtermstructure.hpp> meet 
+
+     }
+
+
+
+
+#include <ql/termstructures/yield/zerocurve.cpp>
+ {
+	
+	#include <ql/termstructures/yield/zeroyieldstructure.hpp> stop 
+    #include <ql/termstructures/interpolatedcurve.hpp>  stop 
+    #include <ql/math/interpolations/linearinterpolation.hpp> stop
+    #include <ql/interestrate.hpp>
+    #include <ql/math/comparison.hpp>
+    #include <ql/utilities/dataformatters.hpp>
+}
+
+
+
+#include <ql/termstructures/volatility/optionlet/capletvariancecurve.cpp>
+#include <ql/math/optimization/levenbergmarquardt.cpp>
+
+#include <ql/math/statistics/generalstatistics.cpp>
+#include <ql/math/randomnumbers/rngtraits.cpp>
+#include <ql/methods/montecarlo/multipathgenerator.cpp>
+
+#include <ql/pricingengines/swap/discountingswapengine.cpp>
+#include <ql/pricingengines/capfloor/blackcapfloorengine.cpp>
+#include <ql/pricingengines/capfloor/analyticcapfloorengine.cpp>
+
+#include <ql/models/shortrate/calibrationhelpers/caphelper.cpp>
+#include <ql/models/shortrate/calibrationhelpers/swaptionhelper.cpp>
+
+#include <ql/legacy/libormarketmodels/lfmcovarproxy.cpp>
+#include <ql/legacy/libormarketmodels/lmexpcorrmodel.cpp>
+#include <ql/legacy/libormarketmodels/lmlinexpcorrmodel.cpp>
+#include <ql/legacy/libormarketmodels/lmfixedvolmodel.cpp>
+#include <ql/legacy/libormarketmodels/lmextlinexpvolmodel.cpp>
+#include <ql/legacy/libormarketmodels/liborforwardmodel.cpp>
+#include <ql/legacy/libormarketmodels/lfmswaptionengine.cpp>
+#include <ql/legacy/libormarketmodels/lfmhullwhiteparam.cpp>
+
+#include <ql/time/daycounters/actual360.cpp>
+#include <ql/time/schedule.cpp>
+#include <ql/quotes/simplequote.cpp>
+
+
