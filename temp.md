@@ -255,6 +255,20 @@ ql/termstructure.hpp
 ql/interestrate.hpp
 ql/version.hpp
 ql/quote.hpp
+ql/cashflow
+ql/compounding.hpp
+ql/currency.hpp
+ql/discretizedasset.hpp
+ql/event.hpp
+ql/index.hpp
+ql/numericalmethod.hpp
+ql/stochasticprocess.hpp
+ql/timegrid.hpp
+
+
+
+
+
 
 
 
